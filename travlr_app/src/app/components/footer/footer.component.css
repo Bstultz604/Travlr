@@ -1,0 +1,106 @@
+/*------------------------------ FOOTER ------------------------------*/
+#footer {
+  color: #594334;
+  font-size: 14px;
+  line-height: 48px;
+  margin: -38px 0 20px;
+  padding-top: 42px;
+  text-transform: uppercase;
+}
+
+  #footer > div {
+    background-color: #ac9e94;
+    height: 48px;
+    width: 822px;
+    border-bottom: 1px solid #72675f;
+    border-top: 1px solid #cdbeb2;
+    margin: 0 auto;
+    padding: 0 20px;
+    text-align: right;
+  }
+
+  #footer ul.navigation {
+    float: left;
+    display: inline-block;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+  }
+
+    #footer ul.navigation li {
+      float: left;
+      margin-right: 10px;
+    }
+
+      #footer ul.navigation li a {
+        color: #594334;
+        padding: 0 5px;
+        text-decoration: none;
+      }
+
+      #footer ul.navigation li:first-child a {
+        border-left: 0;
+        padding-left: 0;
+      }
+
+      #footer ul.navigation li a:hover {
+        color: #eee7c3;
+      }
+
+      #footer ul.navigation li.active a {
+        color: #fff;
+      }
+
+  #footer p {
+    margin: 0;
+    text-align: center;
+    text-transform: none;
+  }
+/** Connect **/
+#connect {
+  float: right;
+  display: inline-block;
+  line-height: 26px;
+  margin: 12px 0 0;
+}
+
+  #connect a {
+    background: url(../../../assets/images/icons.png) no-repeat;
+    display: inline-block;
+    height: 23px;
+    width: 23px;
+    margin-left: 10px;
+  }
+
+    #connect a.pinterest {
+      background-position: 0 -33px;
+    }
+
+    #connect a.facebook {
+      background-position: 0 -98px;
+    }
+
+    #connect a.twitter {
+      background-position: 0 -164px;
+      width: 28px;
+    }
+
+    #connect a.googleplus {
+      background-position: 0 -230px;
+    }
+
+    #connect a.pinterest:hover {
+      background-position: 0 0;
+    }
+
+    #connect a.facebook:hover {
+      background-position: 0 -65px;
+    }
+
+    #connect a.twitter:hover {
+      background-position: 0 -131px;
+    }
+
+    #connect a.googleplus:hover {
+      background-position: 0 -197px;
+    }
