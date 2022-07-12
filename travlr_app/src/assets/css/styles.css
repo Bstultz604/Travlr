@@ -1,6 +1,7 @@
 /* You can add global styles to this file, and also import other style files */
 body {
   background: #ffb744 url(../images/bg-body.jpg) repeat left bottom;
+  background: url(../images/bg-pattern.jpg) repeat-x center top;
   font-family: "Times New Roman", Times, serif;
   margin: 0;
 }

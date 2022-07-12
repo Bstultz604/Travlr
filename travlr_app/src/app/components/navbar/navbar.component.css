@@ -1,14 +1,4 @@
-/*------------------------------ HEADER ------------------------------*/
-#header {
-  margin-bottom: 20px;
-  padding-top: 20px;
-}
-/** Logo **/
-#logo {
-  float: left;
-  margin-bottom: 20px;
-  margin-left: 49px;
-}
+
 /** Navigation **/
 #navigation {
   background: url(../../../../src/assets/images/bg-navigation.png) no-repeat;
