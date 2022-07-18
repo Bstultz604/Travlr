@@ -1,0 +1,45 @@
+<div class="box">
+  <div>
+    <div>
+      <h3>{{title}}</h3>
+     
+      <div class="row" [ngSwitch]="data">
+
+        <ng-template ngSwitchCase="trip">
+
+          <div *ngFor="let trip of trips">
+            <div class="card m1-4" style="width: 18rem;">
+              <div class="card-header">{{ trip.name }}</div>
+            </div>
+          </div>
+
+        </ng-template>
+
+        <ng-template ngSwitchCase="blog">
+
+          <div *ngFor="let blog of blogs">
+            <app-blog-card
+                           title={{blog.title}}
+                           date={{blog.date}}
+                           content={{blog.content}}>
+            </app-blog-card>
+          </div>
+
+        </ng-template>
+
+        <ng-template ngSwitchCase="testimonial">
+
+          <div *ngFor="let testimonial of testimonials">
+            <app-testimonial-card
+                                  content={{testimonial.content}}
+                                  author={{testimonial.author}}>
+
+            </app-testimonial-card>
+          </div>
+
+        </ng-template>
+
+      </div>
+    </div>
+  </div>
+</div>
