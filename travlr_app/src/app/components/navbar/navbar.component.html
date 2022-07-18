@@ -1,25 +1,27 @@
+<script>require('./navbar.component.ts')</script>
+
 <div id="navigation">
   <ul>
     <li class="selected">
-      <a href="">Home</a>
+      <label (click)="homePage()">Home</label>
     </li>
     <li>
-      <a href="">Travel</a>
+      <label (click)="travelPage()">Travel</label>
     </li>
     <li>
-      <a href="">Rooms</a>
+      <label (click)="roomsPage()">Rooms</label>
     </li>
     <li>
-      <a href="">Meals</a>
+      <label (click)="mealPage()">Meals</label>
     </li>
     <li>
-      <a href="">News</a>
+      <label (click)="newsPage()">News</label>
     </li>
     <li>
-      <a href="">About</a>
+      <label (click)="aboutPage()">About</label>
     </li>
     <li>
-      <a href="">Contact</a>
+      <label (click)="contactPage()">Contact</label>
     </li>
   </ul>
 </div>

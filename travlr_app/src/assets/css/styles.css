@@ -18,7 +18,7 @@ img {
   border: 0;
 }
 /*------------------------------ Sprites ------------------------------*/
-#navigation li, #navigation li a:hover, #navigation li.selected a {
+#navigation li, #navigation li label:hover, #navigation li.selected label {
   background-image: url(../images/bg-menu.png);
   background-repeat: repeat-x;
 }
@@ -78,7 +78,7 @@ img {
       padding-left: 0;
     }
 
-    #navigation li a {
+    #navigation li label {
       color: #fff;
       display: block;
       font: bold 14px/48px Arial, Helvetica, sans-serif;
@@ -87,12 +87,12 @@ img {
       text-transform: uppercase;
     }
 
-      #navigation li a:hover {
+      #navigation li label:hover {
         background-position: 0 -59px;
         color: #6d6157;
       }
 
-    #navigation li.selected a {
+    #navigation li.selected label {
       background-position: 0 0;
       color: #e4e1bd;
     }
