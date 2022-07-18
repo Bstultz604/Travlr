@@ -1,1 +1,8 @@
+#flex{
+    display:flex
+}
 
+#sidebar {
+  align-self: center;
+  margin-left: 20px;
+}

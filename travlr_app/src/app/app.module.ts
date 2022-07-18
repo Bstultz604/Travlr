@@ -21,6 +21,8 @@ import { ContactPageComponent } from './components/contact-page/contact-page.com
 //import { TripDataService } from './services/trip-data.service';
 import { BlogCardComponent } from './components/blog-card/blog-card.component';
 import { TestimonialCardComponent } from './components/testimonial-card/testimonial-card.component';
+import { TripCardComponent } from './components/trip-card/trip-card.component';
+import { RoomCardComponent } from './components/room-card/room-card.component';
 
 @NgModule({
   declarations: [
@@ -38,7 +40,9 @@ import { TestimonialCardComponent } from './components/testimonial-card/testimon
     MealPageComponent,
     NewsPageComponent,
     AboutPageComponent,
-    ContactPageComponent
+    ContactPageComponent,
+    TripCardComponent,
+    RoomCardComponent
   ],
   imports: [
     BrowserModule,

@@ -29,7 +29,7 @@ img {
 }
 
 #main div.box, #main div.box > div, #main div.box > div > div {
-  background-image: url(../images/bg-box.png);
+  background-color: white;
   background-repeat: no-repeat;
 }
 /*------------------------------ HEADER ------------------------------*/
@@ -191,7 +191,7 @@ hr {
 #main {
   float: left;
   min-height: 100px;
-  width: 566px;
+  width: fit-content;
 }
 
   #main div.box {

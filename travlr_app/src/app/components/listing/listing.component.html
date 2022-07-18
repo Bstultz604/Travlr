@@ -7,12 +7,17 @@
 
         <ng-template ngSwitchCase="trip">
 
-          <div *ngFor="let trip of trips">
-            <div class="card m1-4" style="width: 18rem;">
-              <div class="card-header">{{ trip.name }}</div>
-            </div>
-          </div>
+          <div *ngFor="let trip of trips">                      
+                <app-trip-card name={{trip.name}}
+                               length={{trip.length}}
+                               start={{trip.length}}
+                               resort={{trip.resort}}
+                               cost={{trip.perPerson}}
+                               image={{trip.image}}
+                               description={{trip.description}}>
 
+                </app-trip-card>            
+          </div>
         </ng-template>
 
         <ng-template ngSwitchCase="blog">
