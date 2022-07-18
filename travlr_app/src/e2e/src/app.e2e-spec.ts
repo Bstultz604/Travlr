@@ -1,6 +1,6 @@
 import { AppPage } from './app.po';
 
-describe('workspace-project App', () => {
+/*describe('workspace-project App', () => {
   let page: AppPage;
 
   beforeEach(() => {
@@ -11,4 +11,4 @@ describe('workspace-project App', () => {
     page.navigateTo();
     expect(page.getParagraphText()).toEqual('Welcome to travlr-app!');
   });
-});
+});*/
