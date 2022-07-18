@@ -1,7 +1,16 @@
 {
   "ExpandedNodes": [
-    ""
+    "",
+    "\\app_api",
+    "\\app_api\\database",
+    "\\app_api\\database\\models",
+    "\\public",
+    "\\travlr_app",
+    "\\travlr_app\\src",
+    "\\travlr_app\\src\\app",
+    "\\travlr_app\\src\\app\\components",
+    "\\travlr_app\\src\\app\\components\\blog-card"
   ],
-  "SelectedNode": "\\D:\\Software_Development\\Visual_Studio_Development\\MEAN_projects\\travlr_MEAN",
+  "SelectedNode": "\\travlr_app\\src\\app\\components\\testimonial-card\\testimonial-card.component.html",
   "PreviewInSolutionExplorer": false
 }
