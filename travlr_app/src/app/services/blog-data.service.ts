@@ -15,7 +15,16 @@ export class BlogDataService {
   public getBlogs(): Promise<Blog[]> {
     console.log("Inside BlogDataService#getBlogs");
     return this.http
-      .get(`${this.apiBaseUrl}blogs`)
+      .get(this.blogUrl)
+      .toPromise()
+      .then((response) => response.json() as Blog[])
+      .catch(this.handleError);
+  }
+
+  public getBlogType(type: String): Promise<Blog[]> {
+    console.log("Inside BlogDataService#getBlogType");
+    return this.http
+      .get(this.blogUrl + type)
       .toPromise()
       .then((response) => response.json() as Blog[])
       .catch(this.handleError);

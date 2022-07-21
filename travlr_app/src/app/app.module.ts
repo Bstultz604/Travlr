@@ -23,6 +23,9 @@ import { BlogCardComponent } from './components/blog-card/blog-card.component';
 import { TestimonialCardComponent } from './components/testimonial-card/testimonial-card.component';
 import { TripCardComponent } from './components/trip-card/trip-card.component';
 import { RoomCardComponent } from './components/room-card/room-card.component';
+import { MealCardComponent } from './components/meal-card/meal-card.component';
+import { NewsListComponent } from './components/news-list/news-list.component';
+import { NewsHighlightComponent } from './components/news-highlight/news-highlight.component';
 
 @NgModule({
   declarations: [
@@ -42,7 +45,10 @@ import { RoomCardComponent } from './components/room-card/room-card.component';
     AboutPageComponent,
     ContactPageComponent,
     TripCardComponent,
-    RoomCardComponent
+    RoomCardComponent,
+    MealCardComponent,
+    NewsListComponent,
+    NewsHighlightComponent
   ],
   imports: [
     BrowserModule,

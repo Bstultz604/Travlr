@@ -3,5 +3,7 @@ export interface Blog {
   title: string,
   date: Date,
   author: string,
-  content: string
+  content: string,
+  type: string,
+  image: string
 }

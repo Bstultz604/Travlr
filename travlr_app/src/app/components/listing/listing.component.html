@@ -1,30 +1,27 @@
 <div class="box">
   <div>
-    <div>
-      <h3>{{title}}</h3>
-     
+    <div>        
       <div class="row" [ngSwitch]="data">
 
         <ng-template ngSwitchCase="trip">
 
-          <div *ngFor="let trip of trips">                      
-                <app-trip-card name={{trip.name}}
-                               length={{trip.length}}
-                               start={{trip.length}}
-                               resort={{trip.resort}}
-                               cost={{trip.perPerson}}
-                               image={{trip.image}}
-                               description={{trip.description}}>
+          <div *ngFor="let trip of trips">
+            <app-trip-card name={{trip.name}}
+                           length={{trip.length}}
+                           start={{trip.length}}
+                           resort={{trip.resort}}
+                           cost={{trip.perPerson}}
+                           image={{trip.image}}
+                           description={{trip.description}}>
 
-                </app-trip-card>            
+            </app-trip-card>
           </div>
         </ng-template>
 
         <ng-template ngSwitchCase="blog">
-
-          <div *ngFor="let blog of blogs">
-            <app-blog-card
-                           title={{blog.title}}
+          <h3>Latest Blog</h3>
+          <div *ngFor="let blog of blogs.slice(0,2)">
+            <app-blog-card title={{blog.title}}
                            date={{blog.date}}
                            content={{blog.content}}>
             </app-blog-card>
@@ -34,14 +31,66 @@
 
         <ng-template ngSwitchCase="testimonial">
 
-          <div *ngFor="let testimonial of testimonials">
-            <app-testimonial-card
-                                  content={{testimonial.content}}
+          <h3>Testimonials</h3>
+          <div *ngFor="let testimonial of testimonials.slice(0,1)">
+            <app-testimonial-card content={{testimonial.content}}
                                   author={{testimonial.author}}>
 
             </app-testimonial-card>
           </div>
 
+        </ng-template>
+
+        <ng-template ngSwitchCase="room">
+          <div class="body">
+            <h1>Rooms</h1>
+            <ul id="rooms">
+              <div *ngFor="let room of rooms">
+                <app-room-card name={{room.name}}
+                               description={{room.description}}
+                               rate={{room.rate}}
+                               image={{room.image}}>
+
+                </app-room-card>
+              </div>
+            </ul>
+          </div>
+        </ng-template>
+
+        <ng-template ngSwitchCase="meal">
+
+          <div class="body">
+            <h1>Meals</h1>
+            <ul id="foods">
+              <div *ngFor="let meal of meals">
+                <app-meal-card type={{meal.type}}
+                               name={{meal.name}}
+                               description={{meal.description}}
+                               image={{meal.image}}>
+                </app-meal-card>
+              </div>
+            </ul>
+          </div>
+        </ng-template>
+
+        <ng-template ngSwitchCase="news-listing">
+          <ul>
+            <div *ngFor="let blog of blogs">
+              <app-news-list title={{blog.title}}></app-news-list>
+            </div>
+          </ul>
+        </ng-template>
+
+        <ng-template ngSwitchCase="news-highlight">         
+            <div *ngFor="let blog of blogs.slice(0,1)">
+              <app-news-highlight
+                                  title={{blog.title}}
+                                  author={{blog.author}}
+                                  content={{blog.content}}
+                                  date={{blog.date}}
+                                  image={{blog.image}}
+                                  ></app-news-highlight>
+            </div>    
         </ng-template>
 
       </div>

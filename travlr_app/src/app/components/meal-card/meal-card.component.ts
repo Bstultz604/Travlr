@@ -1,26 +1,25 @@
 import { Component, OnInit, Input } from '@angular/core';
 
 @Component({
-  selector: 'app-room-card',
-  templateUrl: './room-card.component.html',
-  styleUrls: ['./room-card.component.css']
+  selector: 'app-meal-card',
+  templateUrl: './meal-card.component.html',
+  styleUrls: ['./meal-card.component.css']
 })
-export class RoomCardComponent implements OnInit {
+export class MealCardComponent implements OnInit {
 
   constructor() { }
 
   ngOnInit() {
   }
 
+  @Input()
+  type: string
 
   @Input()
   name: string
 
   @Input()
   description: string
-
-  @Input()
-  rate: string
 
   @Input()
   image: string

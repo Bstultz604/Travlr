@@ -79,3 +79,5 @@ connect();
 require('./models/trip_schema');
 require('./models/blog_schema');
 require('./models/testimonial_schema');
+require('./models/room_schema');
+require('./models/meal_schema');

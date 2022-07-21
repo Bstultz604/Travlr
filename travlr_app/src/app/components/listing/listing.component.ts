@@ -3,10 +3,14 @@ import { Component, OnInit, Input } from '@angular/core';
 import { TripDataService } from '../../services/trip-data.service';
 import { BlogDataService } from '../../services/blog-data.service';
 import { TestimonialDataService } from '../../services/testimonial-data.service';
+import { RoomDataService } from '../../services/room-data.service';
+import { MealDataService } from '../../services/meal-data.service';
 
 import { Testimonial } from '../../models/testimonials';
 import { Trip } from '../../models/trip';
 import { Blog } from '../../models/blog';
+import { Room } from '../../models/rooms'; 
+import { Meal } from '../../models/meals';
 
 @Component({
   selector: 'app-listing',
@@ -15,20 +19,26 @@ import { Blog } from '../../models/blog';
   providers: [
     TripDataService,
     BlogDataService,
-    TestimonialDataService
+    TestimonialDataService,
+    RoomDataService,
+    MealDataService
   ]
 })
 export class ListingComponent implements OnInit {
 
-
+  rooms: Room[];
   testimonials: Testimonial[];
   trips: Trip[];
+
   blogs: Blog[];
+  blogsByType: Blog[];
+
+  meals: Meal[];
 
   message: string;
 
   @Input()
-  title: string;
+  type: string;
 
   @Input()
   data: string;
@@ -36,7 +46,9 @@ export class ListingComponent implements OnInit {
   constructor(
     private tripDataService: TripDataService,
     private blogDataService: BlogDataService,
-    private testimonialDataService: TestimonialDataService
+    private testimonialDataService: TestimonialDataService,
+    private roomDataService: RoomDataService,
+    private mealDataService: MealDataService
   ) { }
 
   ngOnInit() {
@@ -51,6 +63,22 @@ export class ListingComponent implements OnInit {
 
     if (this.data == "testimonial") {
       this.getTestimonials();
+    }
+
+    if (this.data == "room") {
+      this.getRooms();
+    }
+
+    if (this.data == "meal") {
+      this.getMeals();
+    }
+
+    if (this.data == "news-listing") {
+      this.getBlogsByType(this.type);    
+    }
+
+    if (this.data == "news-highlight") {
+      this.getBlogs();
     }
   }
 
@@ -76,6 +104,17 @@ export class ListingComponent implements OnInit {
       });
   }
 
+  private getBlogsByType(type : String): void {
+    console.log('Inside BlogListingComponent#getBlogsByType');
+    this.message = `Searching for Blogs of Type {{this.type}}`;
+    this.blogDataService
+      .getBlogType(type)
+      .then(foundBlogs => {
+        this.message = foundBlogs.length > 0 ? '' : 'No Blogs found';
+        this.blogs = foundBlogs;
+      });
+  }
+
   private getTestimonials(): void {
     console.log('Inside TestimonialsListingComponent#getTestimonails');
     this.message = 'Searching for Testimonials';
@@ -84,6 +123,28 @@ export class ListingComponent implements OnInit {
       .then(foundTestimonials => {
         this.message = foundTestimonials.length > 0 ? '' : 'No Testimonials found';
         this.testimonials = foundTestimonials;
+      });
+  }
+
+  private getRooms(): void {
+    console.log('Inside RoomListingComponent#getRooms');
+    this.message = 'Searching for Rooms';
+    this.roomDataService
+      .getRooms()
+      .then(foundRooms => {
+        this.message = foundRooms.length > 0 ? '' : 'No Rooms found';
+        this.rooms = foundRooms;
+      });
+  }
+
+  private getMeals(): void {
+    console.log('Inside MealListingComponent#getMeal');
+    this.message = 'Searching for Meals';
+    this.mealDataService
+      .getMeals()
+      .then(foundMeals => {
+        this.message = foundMeals.length > 0 ? '' : 'No Meals found';
+        this.meals = foundMeals;
       });
   }
 }
