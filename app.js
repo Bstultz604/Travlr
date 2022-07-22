@@ -24,7 +24,7 @@ if (process.env.NODE_ENV === "production") {
     app.use(express.static(path.join(__dirname, 'travlr_app')));
 
     app.get('/', (req, res) => {
-        res.sendFile(path.join(__dirname, 'client', 'build', 'index.html'))
+        res.sendFile(path.join(__dirname, 'travlr_app', 'dist', 'travlr-app','index.html'))
     })
 }
 
