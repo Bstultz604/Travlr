@@ -32,6 +32,8 @@ else if (process.env.NODE_ENV === "development") {
     app.use(express.static(path.join(__dirname, 'travlr_app')));
 }
 
+app.listen(process.env.PORT || 8080);
+
 //allow CORS
 app.use('/api', (req, res, next) => {
     res.header('Access-Control-Allow-Origin', 'http://localhost:4200');
