@@ -19,7 +19,18 @@ app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
 app.use(cookieParser());
 
-app.use(express.static(path.join(__dirname, 'travlr_app')));
+//Serves built app to Heroku Server
+if (process.env.NODE_ENV === "production") {
+    app.use(express.static(path.join(__dirname, '/travlr_app/build')));
+
+    app.get('*', (req, res) => {
+        res.sendFile(path.join(__dirname, 'client', 'build', 'index.html');
+    })
+}
+
+else if (process.env.NODE_ENV === "development") {
+    app.use(express.static(path.join(__dirname, 'travlr_app')));
+}
 
 //allow CORS
 app.use('/api', (req, res, next) => {
