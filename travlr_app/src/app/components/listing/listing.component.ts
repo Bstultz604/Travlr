@@ -12,6 +12,9 @@ import { Blog } from '../../models/blog';
 import { Room } from '../../models/rooms'; 
 import { Meal } from '../../models/meals';
 
+
+import { blogMergeSort } from '../../algorithims/merge_sort';
+
 @Component({
   selector: 'app-listing',
   templateUrl: './listing.component.html',
@@ -108,9 +111,13 @@ export class ListingComponent implements OnInit {
     console.log('Inside BlogListingComponent#getBlogsByType');
     this.message = `Searching for Blogs of Type {{this.type}}`;
     this.blogDataService
-      .getBlogType(type)
+      .getBlogType(type)    
       .then(foundBlogs => {
         this.message = foundBlogs.length > 0 ? '' : 'No Blogs found';
+        console.log("type: " + type + " qty: " + foundBlogs.length);
+        //algorithim: sorts retireved data in reverse Chrologhical order
+        //'foundblogs' is rearranged in this order
+        blogMergeSort(foundBlogs, 0, foundBlogs.length - 1);    
         this.blogs = foundBlogs;
       });
   }
