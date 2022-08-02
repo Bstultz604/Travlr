@@ -1,26 +1,39 @@
-const mongoose = require('mongoose');           //.set('debug', true);
+
+/******************************************************************************************/
+/*Logical controllers for specific data model*/
+/*logic for 'testimonials' model to access data from database*/
+/*Methods in file can be called to obtain objects in JSON format of data*/
+/*******************************************************************************************/
+
+//Imports and uses mongoose class library features 
+const mongoose = require('mongoose');    
+
+//Creates object and compiles data schema for 'testimonials' model
 const Model = mongoose.model('testimonials');
 
 
-// GET: /blog_schema - list all the trips
+// GET: /testimonial_schema - list all the testimonials
 const testimonialsList = async (req, res) => {
     Model
-        .find({}) //empty filter to GET all trips
+        .find({}) //empty filter to GET all testimonials
         .exec((err, testimonials) => {
+
+            //Returns error status and message if data object is empty
             if (testimonials.length == 0) {
                 return res
                     .status(404)
                     .json({ "message": "testimonials not found" });
             }
 
+            //Returns error status and error message if error occurs during get request
             else if (err) {
                 return res
                     .status(404)
                     .json(err);
             }
 
+            //Returns success status and object of retireved data if no errors
             else {
-                console.log("testimonialsList was called succesfully");
                 return res
                     .status(200)
                     .json(testimonials);
@@ -28,6 +41,7 @@ const testimonialsList = async (req, res) => {
         });
 };
 
+//Exports methods to be used throughout app
 module.exports = {
     testimonialsList
 };

@@ -1,11 +1,26 @@
+
+/**/
+/*DATABASE LOGIC*/
+/*File is used to connect to specific database*/
+/*utilizes external Mongoose library to make connection*/
+/**/
+
+//Imports and uses mongoose library features
 const mongoose = require('mongoose');
-const host = process.env.DB_HOST || '127.0.0.1';
-const dbURI = host/*`mongodb://${host}/travlr`*/;
+
+//Variable stores connection string; either 'env' varible or local machine
+const host = process.env.DB_HOST || '127.0.0.1';  
+
+//Sets the DB connection to value determined above
+const dbURI = host;
+
+//Imports and uses line parsing features from 'readline' external library
 const readLine = require('readline');
 
 //avoid 'current Server Discovery and Monitoring engine is deprecated'
 mongoose.set('useUnifiedTopology', true);
 
+//Methos makes uses mongoose to make connection to DataBase using the dbURI as the connection address
 const connect = () => {
     setTimeout(
         () => mongoose.connect(
