@@ -1,18 +1,27 @@
-<!--The content below is only a placeholder and can be replaced.-->
+<!--HTML Markup that renders the entire application --> <!---->
 <body>
   <div id="background">
 
     <div id="page">
 
+      <!--Renders the header component-->
+      <!--This includes the logic (typescript file), the markup (HTML file), and the style (CSS file)-->
       <app-header></app-header>
 
       <div id="contents">
+        <!--Dynamically switches component renderd depending on specified route -->
+        <!--This includes the logic (typescript file), the markup (HTML file), and the style (CSS file) for specific comoionent rendered this way-->
+        <!--Use of routing can be found in navbar component (ROUTE: travlr_MEAN/travlr_app/src/app/components/navbar/navbar.component.ts)-->
+        <!--See documentation for angular 'router' class for more info-->
+        <!--Declaration fo specific routes can be found in the app-router file (ROUTE: travlr_MEAN/travlr_app/src/app/app-router.module.ts)-->
         <router-outlet></router-outlet>
       </div>
 
-      </div>
-
-      <app-footer></app-footer>
-
     </div>
+
+    <!--Renders the footer component-->
+    <!--This includes the logic (typescript file), the markup (HTML file), and the style (CSS file)-->
+    <app-footer></app-footer>
+
+  </div>
 </body>

@@ -1,10 +1,20 @@
+/**/
+/*File declares and imports all neccesary files for apps front end rendering*/
+/*Imports are passed to NgModule which packages external class imports and custom class imports for the entire front end application*/
+/**/
+
+
+//External resources
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { HttpModule } from '@angular/http';
 import { AppRoutingModule } from './app-router.module';
 
-
+//Imports the main mounting component for use
 import { AppComponent } from './app.component';
+
+//Imports for custom componet logic
+//Can be found at ROUTE: travlr_MEAN/travlr_app/src/app/components/*
 import { NavbarComponent } from './components/navbar/navbar.component';
 import { FooterComponent } from './components/footer/footer.component';
 import { HeaderComponent } from './components/header/header.component';
@@ -17,8 +27,6 @@ import { MealPageComponent } from './components/meal-page/meal-page.component';
 import { NewsPageComponent } from './components/news-page/news-page.component';
 import { AboutPageComponent } from './components/about-page/about-page.component';
 import { ContactPageComponent } from './components/contact-page/contact-page.component';
-
-//import { TripDataService } from './services/trip-data.service';
 import { BlogCardComponent } from './components/blog-card/blog-card.component';
 import { TestimonialCardComponent } from './components/testimonial-card/testimonial-card.component';
 import { TripCardComponent } from './components/trip-card/trip-card.component';
@@ -27,6 +35,7 @@ import { MealCardComponent } from './components/meal-card/meal-card.component';
 import { NewsListComponent } from './components/news-list/news-list.component';
 import { NewsHighlightComponent } from './components/news-highlight/news-highlight.component';
 
+//Packeges all components and external resources to be used in front end application
 @NgModule({
   declarations: [
     AppComponent,
@@ -54,9 +63,6 @@ import { NewsHighlightComponent } from './components/news-highlight/news-highlig
     BrowserModule,
     HttpModule,
     AppRoutingModule
-  ],
-  providers: [
-    //TripDataService
   ],
   bootstrap: [AppComponent]
 })
