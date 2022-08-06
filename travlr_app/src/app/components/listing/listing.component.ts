@@ -114,7 +114,6 @@ export class ListingComponent implements OnInit {
       .getBlogType(type)    
       .then(foundBlogs => {
         this.message = foundBlogs.length > 0 ? '' : 'No Blogs found';
-        console.log("type: " + type + " qty: " + foundBlogs.length);
         //algorithim: sorts retireved data in reverse Chrologhical order
         //'foundblogs' is rearranged in this order
         blogMergeSort(foundBlogs, 0, foundBlogs.length - 1);    
